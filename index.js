@@ -1,5 +1,6 @@
 const isRenderer = require('is-electron-renderer')
 const electron = require('electron')
+const remote = require('@electron/remote');
 const path = require('path')
 const readChunk = require('read-chunk')
 const fileType = require('file-type')
@@ -7,7 +8,7 @@ const extend = require('deep-extend')
 const got = require('got')
 
 const BrowserWindow = isRenderer
-  ? electron.remote.BrowserWindow : electron.BrowserWindow
+  ? remote.BrowserWindow : electron.BrowserWindow
 
 const PDF_JS_PATH = path.join(__dirname, 'pdfjs', 'web', 'viewer.html')
 
